@@ -1,0 +1,4 @@
+html, body{
+  cursor: url("./hand-cursor.png"), pointer;
+  /*background: #61dafb;*/
+}
