@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "my";
+    src: url("./FZLanTYJW_Zhong.TTF");
+    /*src: url("/public/FZLanTYJW_Zhong.TTF");*/
+}
+
+.dialog {
+    width: fit-content;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+.svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.clipped {
+    clip-path: url(#my-clip-path);
+    background: rgb(247,243,223);
+    color: rgb(128,115,89);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "my",'Nunito-SemiBold', sans-serif;
+    text-align: center;
+    /*font-weight: bold;*/
+    /*background: turquoise url(https://source.unsplash.com/600x600?summer);*/
+    /*background-size: cover;*/
+}
+
+.wrapper {
+    padding: 6%;
+}
+
+.clipped p{
+    margin: 1% 0;
+}

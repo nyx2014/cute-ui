@@ -2,14 +2,10 @@
   box-sizing: border-box;
 }
 
-body {
+.container {
   margin: 0;
   background: black;
-  /*cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1385231/hand-cursor.png"),*/
-  /*  pointer;*/
-}
 
-.container {
   height: 99vh;
   width: 100vw;
   display: flex;
