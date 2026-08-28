@@ -7,6 +7,7 @@ default:
   interruptible: true
 
 variables:
+  GIT_STRATEGY: clone
   NPM_CONFIG_CACHE: "$CI_PROJECT_DIR/.npm"
 
 cache:
@@ -21,6 +22,9 @@ quality:
   timeout: 15m
   script:
     - $ErrorActionPreference = "Stop"
+    - git config --local core.autocrlf false
+    - git config --local core.eol lf
+    - git checkout-index --force --all
     - (Get-Command node -ErrorAction Stop).Source
     - (Get-Command npm -ErrorAction Stop).Source
     - node --version
