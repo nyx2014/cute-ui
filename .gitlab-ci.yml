@@ -1,7 +1,10 @@
-image: node:24-bookworm-slim
-
 stages:
   - verify
+
+default:
+  tags:
+    - ubuntu
+  interruptible: true
 
 variables:
   NPM_CONFIG_CACHE: "$CI_PROJECT_DIR/.npm"
@@ -17,12 +20,14 @@ quality:
   stage: verify
   timeout: 15m
   script:
+    - command -v node
+    - command -v npm
     - node --version
     - npm --version
     - npm ci --no-audit --no-fund
     - npm run check
   artifacts:
-    when: always
+    when: on_success
     expire_in: 7 days
     paths:
       - dist/
