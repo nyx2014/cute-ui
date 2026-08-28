@@ -3,7 +3,7 @@ stages:
 
 default:
   tags:
-    - ubuntu
+    - win10
   interruptible: true
 
 variables:
@@ -20,8 +20,9 @@ quality:
   stage: verify
   timeout: 15m
   script:
-    - command -v node
-    - command -v npm
+    - $ErrorActionPreference = "Stop"
+    - (Get-Command node -ErrorAction Stop).Source
+    - (Get-Command npm -ErrorAction Stop).Source
     - node --version
     - npm --version
     - npm ci --no-audit --no-fund
