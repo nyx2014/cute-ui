@@ -12,6 +12,7 @@
 - Vite 8 library mode，输出 ESM、CJS、类型声明和独立 CSS。
 - Storybook 10 文档、交互 Story、a11y addon 和本地 showcase。
 - Vitest 4 + Testing Library；ESLint 10 flat config；Prettier。
+- GitHub Actions 与自建 GitLab CI 使用同一套 `npm run check` 质量门禁。
 - Node 24 LTS 为推荐开发环境；`package.json` 也允许受支持的 Node 22 最新维护版本。
 - `private: true`：防止当前授权状态下意外发布。
 

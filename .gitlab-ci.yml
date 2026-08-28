@@ -1,0 +1,29 @@
+image: node:24-bookworm-slim
+
+stages:
+  - verify
+
+variables:
+  NPM_CONFIG_CACHE: "$CI_PROJECT_DIR/.npm"
+
+cache:
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - .npm/
+
+quality:
+  stage: verify
+  timeout: 15m
+  script:
+    - node --version
+    - npm --version
+    - npm ci --no-audit --no-fund
+    - npm run check
+  artifacts:
+    when: always
+    expire_in: 7 days
+    paths:
+      - dist/
+      - storybook-static/
