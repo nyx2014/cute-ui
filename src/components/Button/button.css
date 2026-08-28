@@ -1,83 +1,103 @@
-/** {*/
-/*    box-sizing: border-box;*/
-/*}*/
-
-:root {
-    --background: #E5FFB3;
-    --background-accent: #DBF8A3;
-    --background-accent-2: #BDE66E;
-    --light: #92DE34;
-    --dark: #69BC22;
-    --text: #025600;
+.cute-button {
+  --cute-button-light: var(--cute-color-primary, #92de34);
+  --cute-button-dark: var(--cute-color-primary-dark, #69bc22);
+  --cute-button-text: var(--cute-color-text-strong, #025600);
+  --cute-button-stripe-size: 25rem;
+  appearance: none;
+  display: inline-flex;
+  min-height: 3rem;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 1.875rem;
+  color: var(--cute-button-text);
+  background-color: var(--cute-button-light);
+  background-size: 100% 100%;
+  box-shadow: 0 0 0 0.4375rem var(--cute-button-light) inset;
+  cursor:
+    url("../../assets/hand-cursor.png") 8 2,
+    pointer;
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transition:
+    transform 160ms ease,
+    filter 160ms ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/*body {*/
-/*    background-color: var(--background);*/
-/*    background-image: linear-gradient(*/
-/*            var(--background-accent-2) 50%,*/
-/*            var(--background-accent) 50%*/
-/*    ), linear-gradient(*/
-/*            var(--background-accent) 50%,*/
-/*            var(--background-accent-2) 50%*/
-/*    );*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: 100% 30px;*/
-/*    background-position: top left, bottom left;*/
-/*    min-height: 98vh;*/
-/*}*/
-
-div.--acui-button {
-    /*display: block;*/
-    width: 400px;
-    /*margin: 0 auto 0 auto;*/
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*top: 30vh;*/
+.cute-button--compact {
+  width: auto;
+  min-width: 8.5rem;
+  padding: 0.75rem 1.25rem;
 }
 
-button.--acui-button {
-    display: block;
-    cursor: url("../Cursor/hand-cursor.png"), pointer;
-    outline: none;
-    border: none;
-    background-color: var(--light);
-    width: 400px;
-    height: 70px;
-    border-radius: 30px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--text);
-    background-size: 100% 100%;
-    box-shadow: 0 0 0 7px var(--light) inset;
-    margin-bottom: 15px;
+.cute-button--default {
+  width: min(100%, 25rem);
+  min-height: 4.375rem;
+  padding: 0.9rem 2rem;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
 }
 
-button.--acui-button:active {
-    transform: scale(0.95);
-}
-button.--acui-button:hover {
-    background-image: linear-gradient(
-            145deg,
-            transparent 10%,
-            var(--dark) 10% 20%,
-            transparent 20% 30%,
-            var(--dark) 30% 40%,
-            transparent 40% 50%,
-            var(--dark) 50% 60%,
-            transparent 60% 70%,
-            var(--dark) 70% 80%,
-            transparent 80% 90%,
-            var(--dark) 90% 100%
-    );
-    animation: --acui-button-background 3s linear infinite;
+.cute-button--wide,
+.cute-button--full {
+  width: 100%;
+  padding: 0.9rem 2rem;
 }
 
-@keyframes --acui-button-background {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 400px 0;
-    }
+.cute-button:not(:disabled):hover {
+  background-image: linear-gradient(
+    145deg,
+    transparent 10%,
+    var(--cute-button-dark) 10% 20%,
+    transparent 20% 30%,
+    var(--cute-button-dark) 30% 40%,
+    transparent 40% 50%,
+    var(--cute-button-dark) 50% 60%,
+    transparent 60% 70%,
+    var(--cute-button-dark) 70% 80%,
+    transparent 80% 90%,
+    var(--cute-button-dark) 90% 100%
+  );
+  animation: cute-button-stripes 3s linear infinite;
+}
+
+.cute-button:not(:disabled):active {
+  transform: scale(0.95);
+}
+
+.cute-button:focus-visible {
+  outline: 0.25rem solid var(--cute-color-focus, #176b87);
+  outline-offset: 0.25rem;
+}
+
+.cute-button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.45);
+  opacity: 0.58;
+}
+
+@keyframes cute-button-stripes {
+  to {
+    background-position: var(--cute-button-stripe-size) 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cute-button {
+    transition: none;
+  }
+
+  .cute-button:not(:disabled):hover {
+    animation: none;
+    background-position: 0 0;
+  }
+
+  .cute-button:not(:disabled):active {
+    transform: none;
+    filter: brightness(0.94);
+  }
 }

@@ -1,4 +1,14 @@
-html, body{
-  cursor: url("./hand-cursor.png"), pointer;
-  /*background: #61dafb;*/
+.cute-cursor-area,
+.cute-cursor-area * {
+  cursor:
+    url("../../assets/hand-cursor.png") 8 2,
+    pointer;
+}
+
+.cute-ui-global-cursor,
+.cute-ui-global-cursor body,
+.cute-ui-global-cursor body * {
+  cursor:
+    url("../../assets/hand-cursor.png") 8 2,
+    pointer;
 }

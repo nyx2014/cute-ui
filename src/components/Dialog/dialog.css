@@ -1,40 +1,104 @@
-@font-face {
-    font-family: "my";
-    src: url("./FZLanTYJW_Zhong.TTF");
-    /*src: url("/public/FZLanTYJW_Zhong.TTF");*/
+.cute-dialog {
+  position: relative;
+  width: min(100%, var(--cute-dialog-width, 32rem));
+  color: var(--cute-dialog-text, #685f4b);
+  font-family: var(
+    --cute-dialog-font-family,
+    ui-rounded,
+    "PingFang SC",
+    "Hiragino Sans GB",
+    system-ui,
+    sans-serif
+  );
+  text-align: center;
 }
 
-.dialog {
-    width: fit-content;
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
+.cute-dialog--small {
+  --cute-dialog-width: 18rem;
 }
 
-.svg {
-    position: absolute;
-    width: 0;
-    height: 0;
+.cute-dialog--medium {
+  --cute-dialog-width: 32rem;
 }
 
-.clipped {
-    clip-path: url(#my-clip-path);
-    background: rgb(247,243,223);
-    color: rgb(128,115,89);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "my",'Nunito-SemiBold', sans-serif;
-    text-align: center;
-    /*font-weight: bold;*/
-    /*background: turquoise url(https://source.unsplash.com/600x600?summer);*/
-    /*background-size: cover;*/
+.cute-dialog--large {
+  --cute-dialog-width: 46rem;
 }
 
-.wrapper {
-    padding: 6%;
+.cute-dialog__defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
-.clipped p{
-    margin: 1% 0;
+.cute-dialog__surface {
+  display: grid;
+  min-height: clamp(7rem, 25vw, 13rem);
+  place-items: center;
+  background: var(--cute-dialog-background, #f7f3df);
+  filter: drop-shadow(0 0.75rem 1.25rem rgb(101 86 55 / 14%));
+}
+
+.cute-dialog__content {
+  position: relative;
+  width: 100%;
+  padding: clamp(1.75rem, 8%, 3.5rem) clamp(2rem, 10%, 4.5rem);
+  overflow-wrap: anywhere;
+}
+
+.cute-dialog__heading {
+  margin-block-end: 0.45rem;
+  color: var(--cute-dialog-heading, #65583e);
+  font-size: clamp(1.05rem, 3vw, 1.4rem);
+  font-weight: 800;
+}
+
+.cute-dialog__body {
+  font-size: clamp(0.95rem, 2.4vw, 1.2rem);
+  line-height: 1.55;
+}
+
+.cute-dialog__body > :first-child {
+  margin-block-start: 0;
+}
+
+.cute-dialog__body > :last-child {
+  margin-block-end: 0;
+}
+
+.cute-dialog__close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.75rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 50%;
+  color: #65583e;
+  background: rgb(255 255 255 / 58%);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.cute-dialog__close:hover {
+  background: rgb(255 255 255 / 88%);
+}
+
+.cute-dialog__close:focus-visible,
+.cute-dialog:focus-visible {
+  outline: 0.25rem solid var(--cute-color-focus, #176b87);
+  outline-offset: 0.2rem;
+}
+
+@media (max-width: 28rem) {
+  .cute-dialog__surface {
+    min-height: 8.25rem;
+  }
+
+  .cute-dialog__content {
+    padding-inline: 2.25rem;
+  }
 }

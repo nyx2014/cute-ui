@@ -1,0 +1,6 @@
+dist
+storybook-static
+coverage
+package-lock.json
+src/assets/island.svg
+src/assets/dialog-shape.svg

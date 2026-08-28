@@ -1,0 +1,24 @@
+.cute-ui-theme {
+  --cute-color-background: #e5ffb3;
+  --cute-color-background-accent: #dbf8a3;
+  --cute-color-primary: #92de34;
+  --cute-color-primary-dark: #69bc22;
+  --cute-color-text-strong: #025600;
+  --cute-color-focus: #176b87;
+  --cute-dialog-background: #f7f3df;
+  --cute-dialog-text: #685f4b;
+  --cute-dialog-heading: #65583e;
+  color: var(--cute-color-text-strong);
+}
+
+.cute-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

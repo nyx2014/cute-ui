@@ -1,0 +1,49 @@
+.cute-story-root {
+  min-height: 100%;
+  padding: 1.5rem;
+  color: #2e4829;
+  background: #f4f2e8;
+  font-family: ui-rounded, "PingFang SC", system-ui, sans-serif;
+}
+
+.docs-story .cute-story-root {
+  min-height: auto;
+}
+
+.story-stack {
+  display: flex;
+  width: min(100%, 48rem);
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.story-panel {
+  width: min(100%, 56rem);
+  padding: clamp(1rem, 4vw, 3rem);
+  border-radius: 1.5rem;
+  background: linear-gradient(145deg, #dff2b4, #f6f0d8);
+}
+
+.story-island-stage {
+  display: grid;
+  min-height: 32rem;
+  place-items: end center;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 50% 70%, rgb(114 211 234 / 70%), transparent 42%),
+    #081b24;
+}
+
+.story-cursor-demo {
+  display: grid;
+  min-height: 20rem;
+  place-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 2px dashed #8fc56b;
+  border-radius: 1.5rem;
+  background: #eeffd4;
+  text-align: center;
+}

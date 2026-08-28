@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "CuteUiLegacyDialog";
+  src: url("../assets/FZLanTYJW_Zhong.TTF") format("truetype");
+  font-display: swap;
+}
+
+.cute-ui-legacy-font {
+  --cute-dialog-font-family:
+    "CuteUiLegacyDialog", ui-rounded, "PingFang SC", sans-serif;
+}

@@ -1,0 +1,38 @@
+.cute-loading-island {
+  --cute-island-width: 17rem;
+  display: inline-grid;
+  width: min(100%, var(--cute-island-width));
+  place-items: center;
+  contain: layout paint;
+}
+
+.cute-loading-island--small {
+  --cute-island-width: 10rem;
+}
+
+.cute-loading-island--medium {
+  --cute-island-width: 17rem;
+}
+
+.cute-loading-island--large {
+  --cute-island-width: 25rem;
+}
+
+.cute-loading-island__svg,
+.cute-loading-island__svg > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(70vh, 33.75rem);
+  overflow: visible;
+}
+
+.cute-loading-island[data-motion="reduced"] {
+  transform: translateZ(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cute-loading-island[data-motion="full"] {
+    transform: translateZ(0);
+  }
+}

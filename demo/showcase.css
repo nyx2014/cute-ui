@@ -1,0 +1,242 @@
+:root {
+  font-family:
+    Inter,
+    ui-rounded,
+    "PingFang SC",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: #2e4829;
+  background: #f4f2e8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 20rem;
+  min-height: 100vh;
+  background: #f4f2e8;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.showcase {
+  width: min(100% - 2rem, 78rem);
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 5rem) 0 max(2.5rem, env(safe-area-inset-bottom));
+}
+
+.showcase__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
+  margin-block-end: clamp(2rem, 5vw, 4rem);
+}
+
+.showcase__eyebrow {
+  margin: 0 0 0.8rem;
+  color: #416b39;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.showcase h1 {
+  max-width: 14ch;
+  margin: 0;
+  color: #173d2a;
+  font-size: clamp(2.6rem, 7vw, 6.6rem);
+  font-weight: 850;
+  letter-spacing: -0.065em;
+  line-height: 0.93;
+}
+
+.showcase__lede {
+  max-width: 44rem;
+  margin: 1.5rem 0 0;
+  color: #4d5a49;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.75;
+}
+
+.showcase__toggle {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid #d5d7c9;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 72%);
+  color: #354b35;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.showcase__toggle input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #69bc22;
+}
+
+.showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.showcase__card {
+  display: flex;
+  min-width: 0;
+  min-height: 24rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: space-between;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgb(31 64 36 / 10%);
+  border-radius: 2rem;
+  background: #fbfaf6;
+  box-shadow: 0 1.3rem 4rem rgb(57 72 42 / 8%);
+}
+
+.showcase__card--actions,
+.showcase__card--cursor {
+  grid-column: span 5;
+}
+
+.showcase__card--island,
+.showcase__card--dialog {
+  grid-column: span 7;
+}
+
+.showcase__card--island {
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 65%, rgb(114 211 234 / 70%), transparent 40%),
+    linear-gradient(155deg, #123444, #081b24);
+}
+
+.showcase__card--dialog {
+  align-items: center;
+  background: linear-gradient(145deg, #dff2b4, #f6f0d8);
+}
+
+.showcase__card-heading {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.showcase__card-heading--light {
+  color: #e8f6ed;
+}
+
+.showcase__index {
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.showcase__card h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  letter-spacing: -0.03em;
+}
+
+.showcase__card-heading p {
+  max-width: 31rem;
+  margin: 0.3rem 0 0;
+  color: #53614f;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.showcase__card-heading--light p {
+  color: #bcd0c7;
+}
+
+.showcase__cursor-zone {
+  display: grid;
+  min-height: 11rem;
+  place-items: center;
+  padding: 1.25rem;
+  border: 2px dashed #8fc56b;
+  border-radius: 1.5rem;
+  background: #eeffd4;
+  text-align: center;
+}
+
+.showcase__cursor-zone span {
+  color: #3b642d;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.showcase__cursor-zone a {
+  color: #176b87;
+}
+
+.showcase__cursor-zone:focus-visible {
+  outline: 0.25rem solid #176b87;
+  outline-offset: 0.2rem;
+}
+
+.showcase__footer {
+  margin-block-start: 2.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid #d5d7c9;
+  color: #555b52;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 54rem) {
+  .showcase__hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .showcase__toggle {
+    width: fit-content;
+  }
+
+  .showcase__card {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 32rem) {
+  .showcase {
+    width: min(100% - 1rem, 78rem);
+  }
+
+  .showcase__card {
+    min-height: 21rem;
+    border-radius: 1.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
